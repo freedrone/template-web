@@ -1,0 +1,46 @@
+{
+  "name": "template-web",
+  "version": "1.0.0",
+  "description": "Template Web",
+  "private": true,
+  "scripts": {
+    "analyze": "npm run webpack -- --mode development",
+    "webpack": "webpack",
+    "dev": "concurrently \"webpack-dev-server\" \"gulp\"",
+    "build": "npm run build:webpack && npm run build:styles",
+    "build:webpack": "npm run webpack -- --mode production",
+    "build:styles": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freedrone/template-web.git"
+  },
+  "author": "Poltio DEV",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freedrone/template-web/issues"
+  },
+  "homepage": "https://github.com/freedrone/template-web#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.0.2",
+    "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
